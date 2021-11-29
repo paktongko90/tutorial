@@ -7,5 +7,5 @@
         {{$post->body}}
     </div>
     <hr>written on {{$post->created_at}}
-    <a href="/posts/{{$post->id}}/edit" class="btn btn-primary btn-sm">Edit</a>
+    <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
 @endsection
