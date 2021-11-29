@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="/posts" class="btn btn-default">Go back</a>
-<h1>{{$post->title}}</h1>
-    <div>
-        {{$post->body}}
-    </div>
-    <hr>written on {{$post->created_at}}
-    <a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
+<h1>Edit Posts</h1>
+    {!! Form::open(['action' => 'PostsController@store','method' => 'POST']) !!}
+        <div class="form-group">
+            {{Form::Label('title','Title')}}
+            {{Form::text('title','',['class' => 'form-control','placeholder' => 'Title'])}}
+        </div>
+        <div class="form-group">
+            {{Form::Label('body','Body')}}
+            {{Form::textarea('body','',['class' => 'form-control','placeholder' => 'Body text'])}}
+        </div>
+        {{Form::submit('Submit',['class' => 'btn btn-primary'])}}
+    {!! Form::close() !!}
 @endsection
